@@ -4,7 +4,7 @@ import (
     "net/http"
 
     "github.com/kaminski-pawel/goth_tut1/components"
-    "github.com/kaminski-pawel/goth_tut1/models"
+    // "github.com/kaminski-pawel/goth_tut1/models"
 )
 
 func CountryList(w http.ResponseWriter, r *http.Reqest) {
