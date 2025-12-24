@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/kaminski-pawel/goth_tut1/handlers"
+	"github.com/kaminski-pawel/goth_tut2/handlers"
 )
 
 func main() {

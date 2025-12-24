@@ -3,8 +3,8 @@ package handlers
 import (
     "net/http"
 
-    "github.com/kaminski-pawel/goth_tut1/components"
-    "github.com/kaminski-pawel/goth_tut1/models"
+    "github.com/kaminski-pawel/goth_tut2/components"
+    "github.com/kaminski-pawel/goth_tut2/models"
 )
 
 func CountryList(w http.ResponseWriter, r *http.Request) {
