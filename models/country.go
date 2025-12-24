@@ -1,4 +1,6 @@
-package "github.com/kaminski-pawel/goth-tut1/models"
+package models
+
+// "github.com/kaminski-pawel/goth-tut1/models"
 
 type Country struct {
     Name string
