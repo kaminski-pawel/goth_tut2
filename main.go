@@ -13,7 +13,7 @@ func main() {
 	// Routes
 	mux.HandleFunc("GET /", handlers.CountryList)
 	mux.HandleFunc("GET /country/{name}", handlers.CountryDetail)
-	mux.HandleFunc("GET /", handlers.SearchCountries)
+	mux.HandleFunc("GET /search", handlers.SearchCountries)
 
 	log.Println("Server starting on :8080")
 	log.Fatal(http.ListenAndServe(":8080", mux))
