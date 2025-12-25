@@ -13,6 +13,14 @@ func CountryList(w http.ResponseWriter, r *http.Request) {
 }
 
 func CountryDetail(w http.ResponseWriter, r *http.Request) {
+    name := r.PathValue("name")
+    for _, country := range models.Countries {
+	if country.Name == name {
+	    component := components.CountryDetail(country)
+	    component.Render(r.Context(), w)
+	    return
+	}
+    }
     http.NotFound(w, r)
 }
 

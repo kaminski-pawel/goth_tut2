@@ -3,7 +3,7 @@ package models
 type Country struct {
     Name string
     Capital string
-    Population int64
+    Population int
     Continent string
     Description string
 }
