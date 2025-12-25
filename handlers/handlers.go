@@ -1,6 +1,7 @@
 package handlers
 
 import (
+    "strings"
     "net/http"
 
     "github.com/kaminski-pawel/goth_tut2/components"
@@ -8,7 +9,7 @@ import (
 )
 
 func CountryList(w http.ResponseWriter, r *http.Request) {
-    component := components.CountryList(models.Countries)
+    component := components.Countries(models.Countries)
     component.Render(r.Context(), w)
 }
 
@@ -25,5 +26,12 @@ func CountryDetail(w http.ResponseWriter, r *http.Request) {
 }
 
 func SearchCountries(w http.ResponseWriter, r *http.Request) {
-    http.NotFound(w, r)
+    query := strings.ToLower(r.URL.Query().Get("search"))
+    var results []models.Country
+    for _, country := range models.Countries {
+	if strings.Contains(strings.ToLower(country.Name), query) {
+	    results = append(results, country)
+	}
+    }
+    components.CountryList(results).Render(r.Context(), w)
 }
